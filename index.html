@@ -4262,22 +4262,22 @@
           >
             <!-- INDIKATOR PERUMAHAN & SANITASI -->
             <option value="sanitasi" selected>
-              Peta Rumah Tangga dengan Akses Sanitasi Layak
+              Peta Rumah Tangga dengan Akses Sanitasi Layak Menurut SLS/RT di Desa Bikang Tahun 2026
             </option>
             <option value="airMinum">
-              Peta Persentase Akses Air Minum Layak
+              Peta Persentase Akses Air Minum Layak Menurut SLS/RT di Desa Bikang Tahun 2026
             </option>
             <option value="airAman">
-              Peta Persentase Akses Air Aman
+              Peta Persentase Akses Air Aman Menurut SLS/RT di Desa Bikang Tahun 2026
             </option>
             <option value="rumahMilik">
-              Peta Persentase Rumah Milik Sendiri
+              Peta Persentase Rumah Milik Sendiri Menurut SLS/RT di Desa Bikang Tahun 2026
             </option>
             <option value="rumahLayak">
-              Peta Persentase Rumah Layak Huni
+              Peta Persentase Rumah Layak Huni Menurut SLS/RT di Desa Bikang Tahun 2026
             </option>
             <option value="sufficientLiving">
-              Peta Sufficient Living Space (Luas Lantai Layak)
+              Peta Sufficient Living Space (Luas Lantai Layak) Menurut SLS/RT di Desa Bikang Tahun 2026
             </option>
 
             <!-- INDIKATOR DEMOGRAFI & KEPENDUDUKAN -->
@@ -4621,7 +4621,7 @@
             </div>
           </div>
           <div class="milestone-photo">
-            <img src="P6_Bikang.jpeg" alt="Foto Bimtek Agen Statistik" />
+            <img src="P2.JPG" alt="Foto Bimtek Agen Statistik" />
           </div>
         </div>
       </div>
@@ -4989,6 +4989,18 @@
       card.innerHTML = `
         <div class="galeri-photo-wrapper">
           <img src="GALERIBIKANG/${i}.jpeg" alt="Galeri ${i}" />
+        </div>
+      `;
+      container.appendChild(card);
+    }
+
+    // Bagian 2: File .jpeg (21 sampai 24)
+    for (let i = 1; i <= 4; i++) {
+      const card = document.createElement('div');
+      card.className = 'galeri-card';
+      card.innerHTML = `
+        <div class="galeri-photo-wrapper">
+          <img src="GALERIBIKANG/B${i}.JPG" alt="Galeri B${i}" />
         </div>
       `;
       container.appendChild(card);
