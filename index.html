@@ -4257,14 +4257,35 @@
           </label>
           <select
             id="pilihJenisPeta"
-            placeholder="Ketik indikator peta yang ingin dicari..."
+            placeholder="Ketik/cari indikator peta..."
             autocomplete="off"
           >
-            <option value="peta1" selected>
-              Peta Persentase Akses Air Minum Layak Tingkat Dusun
-            </option>
-            <option value="peta2">
+            <!-- INDIKATOR PERUMAHAN & SANITASI -->
+            <option value="sanitasi" selected>
               Peta Rumah Tangga dengan Akses Sanitasi Layak
+            </option>
+            <option value="airMinum">
+              Peta Persentase Akses Air Minum Layak
+            </option>
+            <option value="airAman">
+              Peta Persentase Akses Air Aman
+            </option>
+            <option value="rumahMilik">
+              Peta Persentase Rumah Milik Sendiri
+            </option>
+            <option value="rumahLayak">
+              Peta Persentase Rumah Layak Huni
+            </option>
+            <option value="sufficientLiving">
+              Peta Sufficient Living Space (Luas Lantai Layak)
+            </option>
+
+            <!-- INDIKATOR DEMOGRAFI & KEPENDUDUKAN -->
+            <option value="rasioKelamin">
+              Peta Rasio Jenis Kelamin (Sex Ratio)
+            </option>
+            <option value="migrasi">
+              Peta Migrasi Seumur Hidup
             </option>
           </select>
         </div>
@@ -5360,24 +5381,25 @@
       });
 
       // Fungsi untuk mengubah isi kotak peta dan penjelasan
+      // Fungsi untuk mengubah isi kotak peta dan penjelasan
       function tampilkanPeta(idPeta) {
         const data = databasePeta[idPeta];
         if (!data) return;
 
-        // Tampilkan kotak pembungkus peta
+        // Tampilkan bungkusan peta
         document.getElementById("peta-wrapper").style.display = "block";
 
         // Ganti Teks Judul dan Deskripsi
         document.getElementById("judul-peta").innerText = data.judul;
         document.getElementById("deskripsi-peta").innerText = data.deskripsi;
 
-        // Ganti Link Iframe Peta ke folder qgis2web yang sesuai
+        // Ganti URL Iframe ke folder qgis2web yang sesuai
         document.getElementById("frame-peta").src = data.linkPeta;
       }
 
-      // Trigger load peta1 (Air Minum) pertama kali saat halaman dibuka
+      // Trigger load pertama kali saat halaman dibuka (secara default memuat Peta Sanitasi)
       setTimeout(() => {
-        tampilkanPeta("peta1");
+        tampilkanPeta("sanitasi");
       }, 100);
     </script>
     <!-- LIBRARY UNTUK FITUR PENCARIAN DROPDOWN (TOM SELECT) -->
